@@ -1,0 +1,23 @@
+Change of plan: reduce scope to reach a defensible result fast. Keep working only inside the project folder. Do NOT start C5. Do not re-run full exp1-5; reuse cached results in testdata/runs/c4 and re-run only what a change affects. Commit after each numbered step. Report measured numbers only.
+
+0. Housekeeping (do first, 10 minutes): put the pytest basetemp workaround in pyproject/pytest.ini (addopts) so plain `pytest -q` works. Copy seminar.docx and its extracted text into reference/ inside the repo (stop reading outside the repo). Delete the external worktree tle_head and temp files you created outside the repo and list them. Write docs/PLAN.md with the checklist below and tick items as you go; re-read it at the start of every session.
+
+1. Close C4 minimally and commit:
+ a. finish c4_floor.py (per-elevation split) and add a short floor section to docs/C4_results.md; test an elevation mask (e.g. drop windows below 10/15 deg) and/or elevation-based weights; report the new floor and N error on golden, and keep the old numbers side by side;
+ b. golden regression test (N error, Doppler RMS, floor within tolerances);
+ c. coloured-noise surrogate (AR(1) lag-1 0.9-0.99 + random-walk drift) and ONE exp5 run with >=50 seeds, white vs coloured sigma ratios; add and test a documented sigma inflation if the formal sigma is optimistic;
+ d. regenerate docs/C4_results.md, ruff + pytest green, commit C4.
+
+2. Seminar core (this is the thesis content; do these in order):
+ S1 seminar mode (--mode seminar|extended): only M,n free, cross-track intentionally not estimated.
+ S3 per-pass offset + linear drift about TCA_j (eq.3), shared orbit parameters across passes; drift ON in seminar mode.
+ S4 prior P0 (eq.4), default ON in seminar mode, sigma from a stated TLE-age error model; show effect with/without and report the prior bias.
+ S5 Fisher observability tool (Jacobian level, no signals): sigma of along-track vs max elevation (20/45/70/90), number of passes (1-4), time between passes (6 h, 12 h, 24 h), carrier (137, 437 MHz), drift on/off. Tables + figures + a plain-language pass-selection guide. Validate against Monte Carlo for 3 configurations.
+ Then run the golden and altitude/combined I/Q cases in seminar mode vs extended mode and report along-track error reduction (>90% criterion) and Doppler RMS.
+ Commit.
+
+3. Then, only if steps 1-2 are committed: S6 receiver calibration sweep (ppb to ppm at 137 and 437 MHz, bias in along-track estimate), clock-error test (0.1, 1, 10 s; expected along-track = v*dt), and S8 higher-fidelity truth (numerical J2+drag or SGP4 with different e/argp/BSTAR) with the seminar-mode fit. S2, S7, S9 and the remaining claim checks are optional and go to docs/PLAN.md as "later".
+
+4. Tests: seminar-mode preset (only M,n free), per-pass offset+drift recovery, prior effect, Fisher vs Monte Carlo, true.tle isolation, solver never exits at iteration 0, zero measurements -> FitError + non-zero exit, CLI --mode seminar end to end. Whole suite and ruff green.
+
+5. Final SHORT report: tables (seminar vs extended mode, observability guide, calibration, clock error), what is still unverified (real recorded data), files removed outside the repo, git log. Then STOP and wait for my go-ahead.

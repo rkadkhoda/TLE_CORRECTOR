@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "generator": {
+    "name": "satiq"
+  },
+  "created_utc": "2026-10-20T21:04:14.926020+00:00",
+  "stations": [
+    {
+      "name": "tehran",
+      "lat_deg": 35.7,
+      "lon_deg": 51.4,
+      "alt_m": 1200.0,
+      "center_offset_hz": 5000.0,
+      "gain_db": 3.0,
+      "seed": 7
+    }
+  ],
+  "window": {
+    "start": "2026-10-21T18:16:39Z",
+    "stop": "2026-10-21T18:27:31Z",
+    "manual_aos": "2026-10-21T18:16:39Z",
+    "manual_los": "2026-10-21T18:27:31Z"
+  },
+  "rf": {
+    "carrier_hz": 137100000.0,
+    "sdr_center_hz": 137105000.0,
+    "center_offset_hz": 5000.0,
+    "sample_rate_hz": 24000.0,
+    "datatype": "cf32_le",
+    "min_elevation_deg": 10.0,
+    "pass_margin_s": 5.0
+  },
+  "signal": {
+    "type": "fm",
+    "freq_offset_hz": 0.0,
+    "deviation_hz": 3000.0,
+    "mod_freq_hz": 1000.0,
+    "mod": "tone"
+  },
+  "conventions": {
+    "doppler_positive": "approaching",
+    "phase_model": "phi(t) = 2*pi*(fc-flo)*t - 2*pi*fc*R(t)/c ; fd = -fc*dR/dt/c",
+    "rtn": "R radial(up), T along-track, N cross-track; offsets are perturbed-minus-true",
+    "true_tle": "ground truth, not for the corrector"
+  },
+  "true_tle": {
+    "file": "true.tle",
+    "line1": "1 33591U 09005A   26291.57280168  .00000027  00000+0  38013-4 0  9999",
+    "line2": "2 33591  98.9402   2.4602 0014401  44.7273 315.5058 14.13490024911912",
+    "note": "ground truth, not for the corrector"
+  },
+  "recordings": [
+    {
+      "file_names": [
+        "NOAA19_tehran_20261021T181639.sigmf-data",
+        "NOAA19_tehran_20261021T181639.sigmf-meta",
+        "NOAA19_tehran_20261021T181639_truth.csv"
+      ],
+      "station": "tehran",
+      "recording_start_utc": "2026-10-21T18:16:34+00:00",
+      "aos": "2026-10-21T18:16:39+00:00",
+      "tca": "2026-10-21T18:16:39+00:00",
+      "los": "2026-10-21T18:27:31+00:00",
+      "carrier_hz": 137100000.0,
+      "sample_rate_hz": 24000.0,
+      "datatype": "cf32_le",
+      "formats": [
+        "sigmf"
+      ]
+    }
+  ],
+  "perturbed_tles": [
+    {
+      "file": "perturbed_scale1.tle",
+      "scale": 1.0,
+      "achieved_rtn_km": {
+        "radial_km": 1.4999942393186623,
+        "along_km": 2.0048264673603255,
+        "cross_km": 1.0016407626531048
+      }
+    }
+  ]
+}

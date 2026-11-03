@@ -1,0 +1,122 @@
+{
+  "tle": {
+    "line1": "1 33591U 09005A   26291.57280168  .00000027  00000+0  38013-4 0  9999",
+    "line2": "2 33591  98.9402   2.4602 0014401  44.7273 315.5058 14.13490024911912"
+  },
+  "config": {
+    "tle": {
+      "file": "single_pass_20261021/noaa19.tle",
+      "norad_id": null,
+      "name": "NOAA19",
+      "index": 0
+    },
+    "stations": [
+      {
+        "name": "tehran",
+        "lat_deg": 35.7,
+        "lon_deg": 51.4,
+        "alt_m": 1200.0,
+        "center_offset_hz": 5000.0,
+        "gain_db": 3.0,
+        "seed": 7
+      }
+    ],
+    "time": {
+      "start": "2026-10-21T18:16:39Z",
+      "stop": "2026-10-21T18:27:31Z",
+      "manual_aos": "2026-10-21T18:16:39Z",
+      "manual_los": "2026-10-21T18:27:31Z"
+    },
+    "rf": {
+      "carrier_hz": 137100000.0,
+      "sample_rate_hz": 24000.0,
+      "min_elevation_deg": 10.0,
+      "pass_margin_s": 5.0,
+      "quant": "complex64",
+      "output_format": "sigmf",
+      "compress": null
+    },
+    "source": {
+      "type": "fm",
+      "freq_offset_hz": 0.0,
+      "deviation_hz": 3000.0,
+      "mod_freq_hz": 1000.0,
+      "mod": "tone"
+    },
+    "link": {
+      "eirp_dbm": 30.0,
+      "sat_pattern": "isotropic",
+      "sat_gain_dbi": 0.0,
+      "gnd_pattern": "dipole",
+      "gnd_gain_dbi": 2.15,
+      "horizon_extra_db": 0.0,
+      "noise_figure_db": 3.0,
+      "noise_mode": "ktb",
+      "fixed_snr_db": 20.0
+    },
+    "output": {
+      "dir": "single_pass_20261021/out",
+      "compress": null,
+      "formats": [
+        "sigmf"
+      ],
+      "filename_template": "{sat}_{station}_{aos:%Y%m%dT%H%M%S}",
+      "subdir_per": "none",
+      "truth": true,
+      "truth_rate_hz": 10.0,
+      "size_warn_gb": 0.25
+    },
+    "perturb": {
+      "enabled": false,
+      "scales": "1.0",
+      "single": null,
+      "seed": 0
+    },
+    "tle_errors": {
+      "enabled": true,
+      "mode": "physical",
+      "reference": "window_middle",
+      "altitude_km": 1.5,
+      "along_km": 2.0,
+      "cross_km": 1.0,
+      "radial_km": 0.0,
+      "cross_via": "raan",
+      "keep_ma": false,
+      "direct": {},
+      "scales": "1.0",
+      "random_sigma": 0.0,
+      "seed": 42
+    },
+    "selection": {
+      "mode": "first_n",
+      "max_passes": 1,
+      "per_station": true,
+      "indices": [],
+      "min_peak_elevation_deg": null,
+      "min_duration_s": null,
+      "common_view_k": 2,
+      "min_overlap_s": 30.0
+    }
+  },
+  "results": [
+    {
+      "station": "tehran",
+      "aos": "2026-10-21T18:16:39+00:00",
+      "tca": "2026-10-21T18:16:39+00:00",
+      "los": "2026-10-21T18:27:31+00:00",
+      "files": [
+        "single_pass_20261021/out\\NOAA19_tehran_20261021T181639.sigmf-data",
+        "single_pass_20261021/out\\NOAA19_tehran_20261021T181639.sigmf-meta",
+        "single_pass_20261021/out\\NOAA19_tehran_20261021T181639_truth.csv"
+      ],
+      "n_samples": 15888000,
+      "idx": 1,
+      "max_el": NaN,
+      "duration_s": 652.0,
+      "formats": [
+        "sigmf"
+      ],
+      "status": "ok"
+    }
+  ]
+}

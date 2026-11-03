@@ -1,0 +1,34 @@
+{
+    "global": {
+        "core:datatype": "cf32_le",
+        "core:datetime": "2026-10-21T18:16:34+00:00",
+        "core:extensions": [
+            {
+                "name": "satiq",
+                "optional": true,
+                "version": "1.0.0"
+            }
+        ],
+        "core:freq": 137100000.0,
+        "core:num_channels": 1,
+        "core:offset": 0,
+        "core:sample_rate": 24000.0,
+        "core:sha512": "c9c8aaac947e7cd92ceead17bc368af59d9ebadc7381ec96016786098a2d801c487e2030703936dcdaec92de1bb191dc08917e6b2f0e086f4d55161c454de54c",
+        "core:version": "1.0.0",
+        "satiq:carrier_hz": 137100000.0,
+        "satiq:quant": {
+            "dtype": "complex64"
+        },
+        "satiq:station": "tehran",
+        "satiq:tle_line1": "1 33591U 09005A   26291.57280168  .00000027  00000+0  38013-4 0  9999",
+        "satiq:tle_line2": "2 33591  98.9402   2.4602 0014401  44.7273 315.5058 14.13490024911912"
+    },
+    "captures": [
+        {
+            "core:datetime": "2026-10-21T18:16:34+00:00",
+            "core:frequency": 137100000.0,
+            "core:sample_start": 0
+        }
+    ],
+    "annotations": []
+}

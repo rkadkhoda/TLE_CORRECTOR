@@ -1,0 +1,29 @@
+# virtual envs
+.venv/
+venv/
+env/
+
+# build / packaging
+build/
+dist/
+*.spec
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+scratch/
+
+# large binary data (given golden fixture stays on disk but is not committed)
+*.sigmf-data
+*.cfile
+*.wav
+tools/*.exe
+
+# generated run outputs
+testdata/_pytest_tmp/
+testdata/pytest_tmp/
+testdata/runs/
+
+# app data / logs
+*.log

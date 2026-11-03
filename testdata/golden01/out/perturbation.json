@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "reference_time": "2026-10-21T18:22:05+00:00",
+  "mode": "physical",
+  "seed": 42,
+  "variants": [
+    {
+      "mode": "physical",
+      "reference_time": "2026-10-21T18:22:05+00:00",
+      "requested": {
+        "altitude_km": 1.5,
+        "along_km": 2.0,
+        "cross_km": 1.0,
+        "radial_km": 0.0,
+        "cross_via": "raan",
+        "keep_ma": false
+      },
+      "target_rtn_km": {
+        "radial_km": 1.5,
+        "along_km": 2.0,
+        "cross_km": 1.0
+      },
+      "deltas": {
+        "mean_motion_rev_day": -0.004415206524129732,
+        "mean_anomaly_deg": 5.0821603786364085,
+        "raan_deg": -0.007683585044763405
+      },
+      "applied": {
+        "ma": {
+          "delta": 5.0821603786364085,
+          "old": 315.5058,
+          "new": 320.5879603786364
+        },
+        "mm": {
+          "delta": -0.004415206524129732,
+          "old": 14.13490024,
+          "new": 14.130485033475871
+        },
+        "raan": {
+          "delta": -0.007683585044763405,
+          "old": 2.4602,
+          "new": 2.4525164149552365
+        }
+      },
+      "achieved_rtn_km": {
+        "radial_km": 1.4999942393186623,
+        "along_km": 2.0048264673603255,
+        "cross_km": 1.0016407626531048
+      },
+      "residual_km": {
+        "radial_km": -5.760681337729778e-06,
+        "along_km": 0.004826467360325548,
+        "cross_km": 0.0016407626531047548
+      },
+      "perturbed_tle_line1": "1 33591U 09005A   26291.57280168  .00000027  00000+0  38013-4 0  9999",
+      "perturbed_tle_line2": "2 33591  98.9402   2.4525 0014401  44.7273 320.5880 14.13048503911916",
+      "conventions": {
+        "doppler_positive": "approaching",
+        "rtn": "R radial(up), T along-track, N cross-track; offsets are pert-minus-true"
+      },
+      "rtn_at": {
+        "window_start": {
+          "radial_km": 1.4979462545663564,
+          "along_km": 2.7623825795879986,
+          "cross_km": 1.1909475962665577
+        },
+        "window_middle": {
+          "radial_km": 1.4999942393186623,
+          "along_km": 2.0048264673603255,
+          "cross_km": 1.0016407626531048
+        },
+        "window_end": {
+          "radial_km": 1.5018166671898303,
+          "along_km": 1.2468856415300158,
+          "cross_km": 0.7004027253944114
+        }
+      },
+      "scale": 1.0,
+      "file": "perturbed_scale1.tle",
+      "seed": 42
+    }
+  ]
+}
